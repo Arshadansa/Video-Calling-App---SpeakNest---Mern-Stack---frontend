@@ -1,50 +1,75 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import {
+  Call,
+  Login,
+  Singup,
+  Chat,
+  Notification,
+  Homepage,
+  Onboarding,
+} from "./ui";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AuthRoute from "./ui/AuthRoute";
+import ProtectedRoute from "./ui/PrptectedRoutes";
 
 function Search() {
-  const [query, setQuery] = useState("");
-  const [debouncedQuery, setDebouncedQuery] = useState("");
-  const [users, setUsers] = useState([]);
-
-  // Debounce Logic
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedQuery(query);
-    }, 500);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [query]);
-
-  // API Call
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const res = await axios.get(
-        `https://jsonplaceholder.typicode.com/users?name_like=${debouncedQuery}`
-      );
-
-      setUsers(res.data);
-    };
-
-    if (debouncedQuery) {
-      fetchUsers();
-    }
-  }, [debouncedQuery]);
-
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-
-      {users.map((user) => (
-        <h3 key={user.id}>{user.name}</h3>
-      ))}
-    </div>
+    <>
+      <ToastContainer position="top-right" />
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            <AuthRoute>
+              <Login />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <AuthRoute>
+              <Singup />
+            </AuthRoute>
+          }
+        />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Homepage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <ProtectedRoute>
+              <Chat />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/call"
+          element={
+            <ProtectedRoute>
+              <Call />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/notification"
+          element={
+            <ProtectedRoute>
+              <Notification />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </>
   );
 }
 
