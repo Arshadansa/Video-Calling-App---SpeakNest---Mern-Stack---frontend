@@ -18,7 +18,6 @@ function Login() {
     e.preventDefault();
     loginMutate(formData,{
       onSuccess:()=>{
-        
         toast.success("Login successful");
         setTimeout(() => {
           navigate("/");
@@ -33,7 +32,7 @@ function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="w-full bg-secondary  overflow-hidden shadow-lg flex md:flex-row flex-col max-w-5xl mx-auto border border-primary rounded-3xl">
+      <div className="w-full  overflow-hidden shadow-2xl flex md:flex-row flex-col max-w-5xl mx-auto border border-primary rounded-3xl">
         <div className="w-1/2 border-primary border p-8">
           <div className="flex flex-col  gap-10">
             <div className="flex items-center  gap-2">
@@ -43,8 +42,8 @@ function Login() {
               <span className="text-4xl text-primary">SpeakNest</span>
             </div>
             <div>
-              <p className=" text-2xl text-gray-200 stroke-1">Welcome Back</p>
-              <p className="text-gray-400 text-xs">
+              <p className=" text-2xl  stroke-1">Welcome Back</p>
+              <p className="text-xs">
                 Sign in to your account and continue your language learning
                 journey
               </p>
@@ -53,7 +52,7 @@ function Login() {
               <form action="submit" onSubmit={handleSubmit}>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium "
                 >
                   Email
                 </label>
@@ -61,14 +60,14 @@ function Login() {
                    onChange={(e)=>setFormData((pre)=>({...pre,email:e.target.value}))}
                    value={formData.email}
                   required="true"
-                  className="w-full border rounded-full py-2 px-3 outline-none mt-3"
+                  className="w-full border border-gray-500  placeholder:text-gray-500  rounded-full py-2 px-3 outline-none mt-3"
                   type="email"
                   name="email"
                   placeholder="Enter your email"
                 />
                 <label
                   htmlFor="Password"
-                  className="block text-sm mt-8 font-medium text-gray-300"
+                  className="block text-sm mt-8 font-medium "
                 >
                   Password
                 </label>
@@ -76,7 +75,7 @@ function Login() {
                   onChange={(e)=>setFormData((pre)=>({...pre,password:e.target.value}))}
                   value={formData.password}
                   required="true"
-                  className="w-full border rounded-full py-2 px-3 mt-3 outline-none "
+                  className="w-full border border-gray-500  placeholder:text-gray-500 rounded-full py-2 px-3 mt-3 outline-none "
                   type="password"
                   name="Password"
                   placeholder="........"
@@ -85,7 +84,7 @@ function Login() {
                   <button  type="submit" className="w-full cursor-pointer hover:text-white bg-primary text-secondary rounded-full py-2 mt-8">
                     Sign In
                   </button>
-                  <span className="text-sm text-gray-300 text-center mt-2 block">
+                  <span className="text-sm  text-center mt-2 block">
                     Don't have an account?{" "}
                     <Link to="/signup">
                       <span className="text-primary cursor-pointer hover:underline">

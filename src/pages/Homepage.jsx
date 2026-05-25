@@ -1,10 +1,12 @@
-import React from 'react'
-import { Home } from '../ui'
+import React from "react";
+import { Home } from "../ui";
 
 function Homepage() {
   return (
-    <div><Home/></div>
-  )
+    <div>
+      <Home />
+    </div>
+  );
 }
 
-export default Homepage
+export default Homepage;

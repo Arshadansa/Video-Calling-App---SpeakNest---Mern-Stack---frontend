@@ -62,8 +62,8 @@ function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen bg-black  flex items-center justify-center ">
-      <div className="bg-secondary rounded-2xl p-12 gap-4 flex flex-col justify-center items-center w-full mx-auto max-w-5xl">
+    <div className="min-h-screen  flex items-center justify-center ">
+      <div className="border-gray-400 border shadow-2xl rounded-2xl p-12 gap-4 flex flex-col justify-center items-center w-full mx-auto max-w-5xl">
         <h1 className="text-3xl text-center text-primary font-bold">
           Complete Your Profile!
         </h1>
@@ -99,7 +99,7 @@ function Onboarding() {
             <input
               type="text"
               value={formData.fullName}
-              className="w-full text-xs border py-2 px-2 rounded-full outline-none"
+              className="w-full text-xs border placeholder:text-gray-500 py-2 px-2 rounded-full outline-none"
               placeholder="fullName"
               onChange={(e) =>
                 setFormData({ ...formData, fullName: e.target.value })
@@ -111,7 +111,7 @@ function Onboarding() {
               onChange={(e) =>
                 setFormData({ ...formData, bio: e.target.value })
               }
-              className="w-full border  text-xs rounded-3xl py-3 px-3 outline-none"
+              className="w-full border placeholder:text-gray-500  text-xs rounded-3xl py-3 px-3 outline-none"
               placeholder="Tell others about yourself and your language learing goals"
             />
             <div className="w-full flex gap-2">
@@ -125,7 +125,7 @@ function Onboarding() {
                       nativeLanguage: e.target.value,
                     })
                   }
-                  className="py-2 text-xs w-full px-2 outline-none border rounded-full"
+                  className="py-2 text-xs  w-full px-2 outline-none border rounded-full"
                 >
                   {LANGUAGES.map((language) => (
                     <option key={language} value={language}>
@@ -161,7 +161,7 @@ function Onboarding() {
               onChange={(e) =>
                 setFormData({ ...formData, location: e.target.value })
               }
-              className="w-full text-xs border py-2 px-2 rounded-full outline-none"
+              className="w-full text-xs placeholder:text-gray-500 border py-2 px-2 rounded-full outline-none"
               placeholder="📍 City, Country"
             />
             <button

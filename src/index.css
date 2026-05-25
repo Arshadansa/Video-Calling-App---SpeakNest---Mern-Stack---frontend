@@ -4,6 +4,18 @@
   --color-secondary: #181310;
 }
 
+:root[data-theme="light"] {
+  --bg-color: white;
+  --text-color: black;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #111827;
+  --text-color: white;
+}
+
 body {
-  @apply text-white;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }

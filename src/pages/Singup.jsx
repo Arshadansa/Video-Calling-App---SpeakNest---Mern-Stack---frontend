@@ -40,7 +40,7 @@ function Singup() {
   };
   return (
     <div className="flex  items-center justify-center min-h-screen ">
-      <div className="w-full bg-secondary  overflow-hidden shadow-lg flex md:flex-row flex-col max-w-5xl mx-auto border border-primary rounded-3xl">
+      <div className="w-full  overflow-hidden shadow-2xl flex md:flex-row flex-col max-w-5xl mx-auto border border-primary rounded-3xl">
         <div className="w-1/2 border border-primary  flex flex-col justify-evenly p-8">
           <div>
             <div className="flex items-center  gap-2">
