@@ -11,6 +11,7 @@ import {
   Loader,
   Home,
   Header,
+  CallPage,
 } from "./ui";
 
 import { ToastContainer } from "react-toastify";
@@ -77,6 +78,15 @@ function Search() {
             <ProtectedRoute>
               <Header/>
               <Chat />
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/call/:id"
+          element={
+            <ProtectedRoute>
+              <Header/>
+              <CallPage />
             </ProtectedRoute>
           }
         />

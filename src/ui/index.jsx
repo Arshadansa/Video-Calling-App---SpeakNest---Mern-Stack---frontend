@@ -15,6 +15,7 @@ import RecommedFriendCard from "../compoents/RecommedFriendCard";
 import FriendRequestCard from "../compoents/FriendRequestCard";
 import Header from "./common/Header";
 import CallButton from "../compoents/CallButton";
+import CallPage from "../pages/CallPage";
 
 export {
   Login,
@@ -33,5 +34,6 @@ export {
   RecommedFriendCard,
   Loader,
   Header,
+  CallPage,
   CallButton,
 };
