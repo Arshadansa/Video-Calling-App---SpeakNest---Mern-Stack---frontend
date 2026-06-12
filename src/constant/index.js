@@ -1,3 +1,4 @@
+
 export const THEMES = [
   {
     name: "light",
@@ -195,3 +196,4 @@ export const LANGUAGE_TO_FLAG = {
   turkish: "tr",
   dutch: "nl",
 };
+

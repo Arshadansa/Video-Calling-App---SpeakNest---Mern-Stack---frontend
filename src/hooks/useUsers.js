@@ -4,6 +4,8 @@ import {
   getRecommededUsers,
   sendFriendRequest,
   outGoingFriendReqs,
+  getFriendRequest,
+  acceptFriendRequest,
 } from "../services/authApi.js";
 
 export const useUserFriends = () => {
@@ -22,6 +24,14 @@ export const useUserRecommedFriends = () => {
   });
 };
 
+export const useGetFriendRequest = () => {
+  return useQuery({
+    queryKey: ["getFriendRequest"],
+    queryFn: getFriendRequest,
+    retry: false,
+  });
+};
+
 export const useOutGoingFriendReqs = () => {
   return useQuery({
     queryKey: ["outgoingFriendReqs"],
@@ -29,7 +39,6 @@ export const useOutGoingFriendReqs = () => {
     retry: false,
   });
 };
-
 
 export const useSendFriendRequest = () => {
   const queryClient = useQueryClient();
@@ -40,6 +49,20 @@ export const useSendFriendRequest = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["outgoingFriendReqs"],
+      });
+    },
+  });
+};
+
+export const useFriendRequest = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: acceptFriendRequest,
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["getFriendRequest"],
       });
     },
   });

@@ -2,14 +2,18 @@ import React from "react";
 import { CustomImage } from "../ui";
 import { useTheme } from "../Context/ThemeContext";
 import { LANGUAGE_TO_FLAG } from "../constant";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getLanguageFlag } from "../constant/Flag.jsx";
 
 function FriendCard({ friend }) {
   const { theme, toggleTheme } = useTheme();
-
+  const navigate = useNavigate();
+  const handleChat = () => {
+    navigate(`/chat/${friend._id}`);
+  };
   return (
     <div
-      className={`"relative ${theme === "light" ? "bg-amber-50" : "bg-secondary/20"} bg-neutral-primary-soft max-w-xs w-full p-6  py-4  rounded-lg shadow-md "`}
+      className={`"relative ${theme === "light" ? "bg-amber-50" : "bg-secondary/20"} bg-neutral-primary-soft max-w-xs w-full px-3  py-3 border border-gray-200  rounded-lg shadow-md "`}
     >
       <div className="flex flex-col gap-5">
         <div className="flex items-center gap-2">
@@ -18,20 +22,28 @@ function FriendCard({ friend }) {
             src={"https://api.dicebear.com/6.x/avataaars/svg?seed=88"}
           />
           <h5 className="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-            Bonnie Green
+            {friend?.fullName || "John Doe"}
           </h5>
         </div>
-        <div className="flex justify-evenly border w-full gap-2 items-center">
-          <span className="text-sm text-body">Native:</span>
-          <span className="text-sm text-body">Learning:</span>
+
+        <div className="flex gap-2  w-full  items-center">
+          <span className="bg-[#2eb082] flex items-center text-white rounded-full px-3 py-1 text-xs">
+        { getLanguageFlag(friend?.nativeLanguage)}
+            Native:{friend?.nativeLanguage || "English"}
+          </span>
+          <span className="border flex items-center  rounded-full px-3 py-1 text-xs">
+          { getLanguageFlag(friend?.learningLanguage)}
+            Learning:{friend?.learningLanguage || "Spanish"}
+          </span>
         </div>
-        <div className="">
-          <Link
-            to={"/chat"}
-            className="w-full border cursor-pointer outline-none rounded-full px-3 py-2"
+
+        <div className=" flex ">
+          <button
+            onClick={handleChat}
+            className="w-full hover:bg-primary hover:text-white transition-all duration-700 ease-in-out border text-center cursor-pointer outline-none rounded-full px-3 py-2"
           >
             Message
-          </Link>
+          </button>
         </div>
       </div>
     </div>
@@ -40,19 +52,4 @@ function FriendCard({ friend }) {
 
 export default FriendCard;
 
-function getLanguageFlag(language) {
-  if (!language) return null;
 
-  const langlower = language.toLowercase();
-  const countryCode = LANGUAGE_TO_FLAG[langlower];
-
-  if (countryCodex) {
-    return (
-      <CustomImage
-        src={`https://flagcdn.com/24*18/${countryCode}`}
-        alt={`${langlower} flag`}
-        className="h-3 mr-1 inline-block"
-      />
-    );
-  }
-}

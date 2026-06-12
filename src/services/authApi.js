@@ -47,5 +47,21 @@ export const outGoingFriendReqs = async () => {
 
 export const sendFriendRequest = async (userId) => {
   const response = await api.post(`/user/friends-request/${userId}`);
-  return response?.data
+  return response?.data;
 };
+
+export const getFriendRequest = async () => {
+  const response = await api.get("/user/friends-requests");
+  return response?.data;
+};
+
+export const acceptFriendRequest = async (id) => {
+  
+  const response = await api.put(`/user/friends-request/${id}/accept`);
+  return response?.data;
+};
+
+export const getStreamToken = async ()=>{
+  const response = await api.get("/chat/token");
+  return response?.data;
+}

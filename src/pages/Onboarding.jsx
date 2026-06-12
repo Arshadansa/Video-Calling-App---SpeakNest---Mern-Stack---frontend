@@ -15,7 +15,7 @@ function Onboarding() {
 
   const { data: user, isLoading } = useCurrentUser();
   ///optimize this by using useMemo
-  // console.log("user", user);
+  
   const { mutate, isPending,error } = useOnboard();
 
   const [formData, setFormData] = useState({

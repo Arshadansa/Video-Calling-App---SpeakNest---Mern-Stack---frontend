@@ -2,15 +2,15 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import {
-  Call,
+  Friends,
   Login,
   Singup,
   Chat,
   Notification,
-  Homepage,
   Onboarding,
   Loader,
   Home,
+  Header,
 } from "./ui";
 
 import { ToastContainer } from "react-toastify";
@@ -20,7 +20,6 @@ import AuthRoute from "./ui/AuthRoute";
 import ProtectedRoute from "./ui/PrptectedRoutes";
 
 import { useCurrentUser } from "./hooks/CurrentUser";
-
 
 function Search() {
   const { isLoading } = useCurrentUser();
@@ -38,7 +37,6 @@ function Search() {
       <ToastContainer position="top-right" />
 
       <Routes>
-
         {/* Public Routes */}
         <Route
           path="/login"
@@ -69,11 +67,19 @@ function Search() {
           }
         >
           <Route path="/" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/call" element={<Call />} />
+          <Route path="/friends" element={<Friends />} />
+
           <Route path="/notification" element={<Notification />} />
         </Route>
-
+        <Route
+          path="/chat/:id"
+          element={
+            <ProtectedRoute>
+              <Header/>
+              <Chat />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );

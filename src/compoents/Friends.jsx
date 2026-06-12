@@ -14,7 +14,7 @@ function Friends() {
     recomFriendTitle: "No recommedations available",
     recomFriendDesc: "Check back later for new language partner!",
   };
-
+ 
   return (
     <div>
       {loadingFriends ? (
@@ -27,9 +27,9 @@ function Friends() {
           descTitle={friendsPara.friendDesc}
         />
       ) : (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-2">
           {friends?.data?.userFriends?.map((friend) => {
-            <FriendCard key={friend._id} friend={friend} />;
+            return <FriendCard key={friend._id} friend={friend} />;
           })}
         </div>
       )}
