@@ -1,16 +1,60 @@
-# React + Vite
+# SpeakNest – Real-Time Language Learning Platform 🌍🎥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 About the Project
 
-Currently, two official plugins are available:
+SpeakNest is a real-time language learning platform designed to help users improve their speaking skills by interacting with others through live video conversations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The platform provides an interactive and immersive environment where users can:
+- Practice languages with real people
+- Join live video conversations
+- Send and receive real-time chat messages
+- Stream live sessions
+- Authenticate securely and manage user sessions
 
-## React Compiler
+This project aims to make language learning more engaging, social, and practical by simulating real-world conversations.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 User Authentication (Login/Register)
+- 🎥 Real-time Video Calling
+- 💬 Live Chat System
+- 📡 Live Streaming Support
+- 👥 Peer-to-peer language practice sessions
+- ⚡ Fast and responsive UI
+- 🌐 Scalable MERN architecture
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS (if used)
+- Socket.IO Client
+
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Socket.IO
+- JWT Authentication
+- Steam SDK
+
+### Deployment
+- Frontend: Vercel
+- Backend: Render / AWS (or your setup)
+
+---
+<img width="1470" height="801" alt="Screenshot 2026-06-14 at 12 34 50 AM" src="https://github.com/user-attachments/assets/e4ea8ad5-1aa0-493a-b537-defc99166763" />
+
+<img width="1470" height="801" alt="Screenshot 2026-06-14 at 12 36 32 AM" src="https://github.com/user-attachments/assets/51d9f101-c7f8-4876-8af1-ea6743a8aee3" />
+
+<img width="1470" height="801" alt="Screenshot 2026-06-14 at 12 35 14 AM" src="https://github.com/user-attachments/assets/4e073ba0-2042-4198-b8f4-cdd68fa625f5" />
+
+
+
+## 📂 Project Structure
