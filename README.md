@@ -55,6 +55,8 @@ This project aims to make language learning more engaging, social, and practical
 
 <img width="1470" height="801" alt="Screenshot 2026-06-14 at 12 35 14 AM" src="https://github.com/user-attachments/assets/4e073ba0-2042-4198-b8f4-cdd68fa625f5" />
 
+<img width="1470" height="801" alt="Screenshot 2026-06-14 at 12 35 57 AM" src="https://github.com/user-attachments/assets/cdf45a60-64d7-46f3-be66-c627205271a1" />
+
 
 
 ## 📂 Project Structure
